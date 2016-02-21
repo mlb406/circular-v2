@@ -1,0 +1,19 @@
+{
+  "uuid": "c3abdcca-6daa-4b1c-99eb-24aeef8cb00c",
+  "shortName": "Circular+",
+  "longName": "Circular Plus",
+  "companyName": "Max Beckett",
+  "versionLabel": "2.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["basalt"],
+  "enableMultiJS": true,
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}

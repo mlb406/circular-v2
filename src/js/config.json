@@ -1,0 +1,32 @@
+[
+{
+	"type": "heading",
+	"defaultValue": "Circular Plus v2"
+}, {
+	"type": "section",
+	"items": [
+	{
+		"type": "heading",
+		"defaultValue": "Options"
+	}, {
+		"type": "toggle",
+		"appKey": "animation",
+		"label": "Animation on shake (requires app restart)"
+	}
+	]
+}, {
+	"type": "submit",
+	"defaultValue": "SAVE"
+}, {
+	"type": "section",
+	"items": [
+	{
+		"type": "heading",
+		"defaultValue": "About"
+	}, {
+		"type": "text",
+		"defaultValue": "Circular Plus v2 by Max Beckett 2016<br>Version 2 of my watchface 'Circular Plus'<br>Last updated 27/02/16"
+	}
+	]
+}
+]

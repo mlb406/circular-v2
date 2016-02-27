@@ -1,6 +1,8 @@
 #include <pebble.h>
 #include "math.h"
 
+#define KEY_ANIMATION 0
+
 static Window *window;
 static Layer *hands_layer;
 static TextLayer *time_layer;
@@ -188,6 +190,19 @@ static void tap_handler(AccelAxisType axis, int32_t direction) {
 	anim_timer = app_timer_register(1000, app_timer_callback, NULL);
 }
 
+static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
+	Tuple *animation_tuple = dict_find(iterator, KEY_ANIMATION);
+
+	if (animation_tuple) {
+		persist_write_int(KEY_ANIMATION, (int)animation_tuple->value->int16);
+	}
+}
+
+static void inbox_dropped_callback(AppMessageResult reason, void *context) {
+	  APP_LOG(APP_LOG_LEVEL_ERROR, "Message dropped!");
+}
+
+
 static void init() {
 	window = window_create();
 	
@@ -195,7 +210,13 @@ static void init() {
 
 	tick_timer_service_subscribe(SECOND_UNIT, tick_handler);
 	battery_state_service_subscribe(battery_callback);
-	accel_tap_service_subscribe(tap_handler);
+	
+	if (persist_read_int(KEY_ANIMATION) == 1) {
+		accel_tap_service_subscribe(tap_handler);
+	} 
+
+	app_message_register_inbox_received(inbox_received_callback);
+	app_message_register_inbox_dropped(inbox_dropped_callback);
 
 	window_set_window_handlers(window, (WindowHandlers) {
 		.load = main_window_load,
@@ -207,10 +228,14 @@ static void init() {
 	update_time();
 	update_battery();
 	
+	app_message_open(128, 128);
+
 	circle_radius = 0;
 	layer_mark_dirty(bg_layer);
 
 	expand_radius();
+
+	
 }
 
 static void deinit() {

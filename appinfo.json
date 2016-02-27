@@ -7,11 +7,14 @@
   "sdkVersion": "3",
   "targetPlatforms": ["basalt"],
   "enableMultiJS": true,
+  "capabilities": [
+	  "configurable"
+  ],
   "watchapp": {
     "watchface": true
   },
   "appKeys": {
-    "dummy": 0
+    "KEY_ANIMATION": 0
   },
   "resources": {
     "media": []

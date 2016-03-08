@@ -1,7 +1,7 @@
 [
 {
 	"type": "heading",
-	"defaultValue": "Circular Plus v2"
+	"defaultValue": "Circular Plus v2.2"
 }, {
 	"type": "section",
 	"items": [
@@ -11,7 +11,51 @@
 	}, {
 		"type": "toggle",
 		"appKey": "animation",
-		"label": "Animation on shake (requires app restart)"
+		"label": "Animation on shake"
+	}, {
+		"type": "color",
+		"sunlight": false,
+		"appKey": "primary",
+		"defaultValue": "0000FF",
+		"label": "Primary colours",
+		"description": "Circle and hand background"
+	}, {
+		"type": "color",
+		"sunlight": false,
+		"appKey": "secondary",
+		"defaultValue": "FF0000",
+		"label": "Secondary colours",
+		"description": "Main text, background and hands"
+	}, {
+		"type": "toggle",
+		"appKey": "colortoggle",
+		"label": "Colour Scheme toggle:"
+	}, {
+		"type": "select",
+		"appKey": "colorscheme",
+		"defaultValue": "0",
+		"label": "Colour Scheme Selection",
+		"options": [
+		{
+			"label": "",
+			"value": "0"
+		}, {
+			"label": "Red and Blue",
+			"value": "0"
+		}, {
+			"label": "Bumblebee",
+			"value": "1"
+		}, {
+			"label": "Festive",
+			"value": "2"
+		}, {
+			"label": "Red + Black",
+			"value": "3"
+		}, {
+			"label": "VividWhite",
+			"value": "4"
+		}
+		]
 	}
 	]
 }, {
@@ -25,8 +69,20 @@
 		"defaultValue": "About"
 	}, {
 		"type": "text",
-		"defaultValue": "Circular Plus v2 by Max Beckett 2016<br>Version 2 of my watchface 'Circular Plus'<br>Last updated 27/02/16"
+		"defaultValue": "Circular Plus v2.2 by Max Beckett 2016<br>Version 2.2 of my watchface 'Circular Plus'<br>Last updated 08/03/16"
+	}
+	]
+}, {
+	"type": "section",
+	"items": [
+	{
+		"type": "heading",
+		"defaultValue": "Colour Suggestions"
+	}, {
+		"type": "text",
+		"defaultValue": "To make a colour scheme suggestion, please <a href=\"mailto:mlb406@gmail.com?subject=Colour Suggestion\">email me here</a>. Please note that the two colours that change are the circle/bars and the main text/hands/background. Also include a possible title, a name to credit and colours for low/charging battery."
 	}
 	]
 }
+
 ]
